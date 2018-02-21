@@ -1,5 +1,24 @@
+<h1>Community Board Budget Requests App</h1>
+
 {{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
+{{!-- {{welcome-page}} --}}
 {{!-- Feel free to remove this! --}}
 
-{{outlet}}
+<div class="layout-row flex">
+  <div class="flex">
+    Listing of budget requests 
+    <ul>
+      {{#each model as |budgetRequest|}}
+        <li>
+          {{link-to budgetRequest.need 'request' budgetRequest.cartodb_id}} 
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="flex">
+    Current View:
+    {{outlet}}
+  </div>
+</div>
+
+{{!-- {{component-name property1='something' f}} --}}
