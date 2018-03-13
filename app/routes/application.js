@@ -4,8 +4,10 @@ const API = 'https://planninglabs.carto.com/api/v2/sql?skipfields=the_geom&q=SEL
 
 export default Route.extend({
   model() {
-    return fetch(API)
-      .then(blob => blob.json())
-      .then(json => json.rows);
+    // return fetch(API)
+    //   .then(blob => blob.json())
+    //   .then(json => json.rows);
+
+    return this.store.findAll('budget-request'); // -> GET /budget-requests
   }
 });

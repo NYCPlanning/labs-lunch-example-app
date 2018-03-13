@@ -1,5 +1,7 @@
 <h1>Community Board Budget Requests App</h1>
 
+{{stateful-component thing=thing}}
+
 {{!-- The following component displays Ember's default welcome message. --}}
 {{!-- {{welcome-page}} --}}
 {{!-- Feel free to remove this! --}}
@@ -10,7 +12,7 @@
     <ul>
       {{#each model as |budgetRequest|}}
         <li>
-          {{link-to budgetRequest.need 'request' budgetRequest.cartodb_id}} 
+          {{link-to budgetRequest.need 'request' budgetRequest.id}} 
         </li>
       {{/each}}
     </ul>
